@@ -1,7 +1,7 @@
 <%= form_with model: food do |form| %>
   <% if food.errors.any? %>
     <div>
-      <h4><%= pluralize(food.errors.count, 'error') %> prohibited this post from being saved:</h4>
+      <h4><%= pluralize(food.errors.count, 'error') %> prohibited this object from being saved:</h4>
       <ul>
         <% food.errors.full_messages.each do |message| %>
           <li><%= message %></li>
