@@ -1,0 +1,15 @@
+<section id='recipes'>
+xjcnjxdcn
+<div class="w-auto p-3" style="background-color: #eee;">
+  <% @recipes.each do |recipe| %>
+  <div class="card-body">
+    <h5 class="card-title"><%= recipe.name %></h5>
+    <p class="card-text"><%= recipe.description %></p>
+    <%= button_to 'Remove', recipe_path(recipe), method: :delete %>
+  </div>
+  <% end %>
+  <div class='mt-5 mb-5 text-end'>
+    <%= link_to 'Add Recipe', new_recipe_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+</section>
