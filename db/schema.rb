@@ -28,3 +28,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_24_152806) do
   end
 
 end
+
+ActiveRecord::Schema[7.0].define(version: 2023_05_23_151841) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "foods", force: :cascade do |t|
+    t.string "name"
+    t.string "measurement_unit"
+    t.decimal "price"
+    t.integer "quantity"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_foods_on_user_id"
+  end
+
+end
