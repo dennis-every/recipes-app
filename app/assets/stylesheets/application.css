@@ -14,4 +14,6 @@
  *= require_self
  */
 
-@import 'bootstrap';
+body {
+  background: white;
+}
