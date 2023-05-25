@@ -25,6 +25,17 @@
     <%= form.label :description %> <br>
     <%= form.text_field :description %>
   </div>
+   <div>
+      <%= form.label :public %><br/>
+      <%= form.label :public, "Yes", value: "true" %>
+      <%= form.radio_button :public, true, checked: true %> &nbsp; &nbsp;
+      <%= form.label :public, "No", value: "false" %>
+      <%= form.radio_button :public, false %>
+    </div>
+    <div>
+    <%= form.label :user_id %>
+    <%= form.collection_select :user_id, User.all, :id, :name, { include_blank: true }, { class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" } %>
+  </div>
   <div>
     <%= form.submit %>
   </div>

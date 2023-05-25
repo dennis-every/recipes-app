@@ -1,0 +1,21 @@
+<% if @public_recipes.empty? %>
+    <h1>No recipes yet!</h1>
+<% else %>
+<h1>Public Recipes</h1>
+<% @public_recipes.each do |recipe| %>
+    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center"><%= recipe.name %></h5>
+        By: <span class="font-bold"><%= recipe.user.name %></span>
+          <div class="px-2 py-1 flex flex-col items-center gap-2 my-5">
+            <div class="flex justify-between">
+              <span>Total food items: </span>
+              <span class="font-bold"><%= recipe.foods.length %></span>
+            </div>
+            <div class="flex justify-between">
+              <span>Total price:</span>
+              <span class="font-bold">$<%= @totals[recipe.id] %></span>
+            </div>
+          </div>
+    </div>
+<% end %>
+<% end %>
