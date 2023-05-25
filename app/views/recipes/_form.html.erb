@@ -34,7 +34,7 @@
     </div>
     <div>
     <%= form.label :user_id %>
-    <%= form.collection_select :user_id, User.all, :id, :name, { include_blank: true }, { class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" } %>
+    <%= form.collection_select :user_id, User.all, :id, :name, { include_blank: true } %>
   </div>
   <div>
     <%= form.submit %>
