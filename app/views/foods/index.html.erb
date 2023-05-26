@@ -1,25 +1,49 @@
-<section id='foods'>
+<section id='foods' class="container mx-auto px-4">
   <div class='mt-5 mb-5 text-end'>
-    <%= link_to 'Add Food', new_food_path, class: 'btn btn-primary' %>
+    <%= link_to 'Add Food', new_food_path, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' %>
   </div>
-  <table class='table table-bordered table-striped'>
-    <thead>
-      <th>Food</th>
-      <th>Measurement unit</th>
-      <th>Quantity</th>
-      <th>Unit price</th>
-      <th>Actions</th>
-    </thead>
-    <tbody>
-      <% @foods.each do |food| %>
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
-          <td><%= food.name %></td>
-          <td><%= food.measurement_unit %></td>
-          <td><%= food.quantity %></td>
-          <td><%= food.price %></td>
-          <td><%= button_to 'Delete', food_path(food), method: :delete %></td>
+          <th scope="col" class="px-6 py-3">
+            Food
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Measurement unit
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Quantity
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Unit price
+          </th>
+          <th scope="col" class="px-6 py-3">
+            Actions
+          </th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @foods.each do |food| %>
+          <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              <%= food.name %>
+            </th>
+            <td class="px-6 py-4">
+              <%= food.measurement_unit %>
+            </td>
+            <td class="px-6 py-4">
+              <%= food.quantity %>
+            </td>
+            <td class="px-6 py-4">
+              <%= food.price %>
+            </td>
+            <td class="px-6 py-4">
+              <%= button_to 'Delete', food_path(food), method: :delete, class:"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </section>
