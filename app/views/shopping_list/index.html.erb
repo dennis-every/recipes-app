@@ -1,0 +1,23 @@
+<section id='shopping-list'>
+  <h1 class='m-5 text-center'>Shopping List</h1>
+  <div class='row'>
+    <div class="col text-center">Amount of items to buy: <%= @foods.size %></div>
+    <div class="col text-center">Total value of food needed: <%= @foods_total %></div>
+  </div>
+  <table class='table table-bordered table-striped mt-5'>
+    <thead>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.quantity %></td>
+          <td><%= food.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>

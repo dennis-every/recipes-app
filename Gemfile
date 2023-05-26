@@ -29,6 +29,10 @@ gem 'stimulus-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
+gem 'devise'
+
+gem 'tailwindcss-rails'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -45,16 +49,20 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 # Use Sass to process CSS
-gem 'bootstrap', '~> 5.2', '>= 5.2.3'
-gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
+# gem 'bootstrap', '~> 5.2', '>= 5.2.3'
+# gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'capybara'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 6.0', '>= 6.0.2'
+  gem 'faker', '~> 3.2'
+  gem 'rspec-rails', '~> 6.0', '>= 6.0.2'
+  gem 'webdrivers'
 end
 
 group :development do
@@ -62,7 +70,7 @@ group :development do
   gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  gem 'rack-mini-profiler'
+  # gem 'rack-mini-profiler'
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   gem 'spring'
