@@ -42,6 +42,12 @@ class RecipesController < ApplicationController
     end
   end
 
+  def publish
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(public: false)
+    head :no_content
+  end
+
   private
 
   def recipe_params
