@@ -1,10 +1,10 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    @recipes = current_user.recipes
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
+    @recipe = current_user.recipes.new(recipe_params)
     if @recipe.save
       redirect_to recipes_path
     else
@@ -21,6 +21,19 @@ class RecipesController < ApplicationController
 
     @recipe.destroy
     redirect_to recipes_path
+  end
+
+  def public
+    @totals = {}
+
+    @public_recipes = Recipe.where(public: true).includes(:foods, :user).order('created_at DESC')
+    @public_recipes.each do |pub|
+      total = 0
+      RecipeFood.where(recipe_id: pub.id).each do |rec_food|
+        total += rec_food.quantity * rec_food.food.price
+      end
+      @totals[pub.id] = total
+    end
   end
 
   private
