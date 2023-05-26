@@ -1,5 +1,13 @@
 <% if @public_recipes.empty? %>
-  <h1 class="text-3xl font-bold text-center my-8">No recipes yet!</h1>
+  <div class='text-center'>
+    <h1 class="text-3xl font-bold my-8">Hello! We don't have any recipes yet!</h1>
+    <p class='mb-5'>Please be the first to create one!</p>
+    <% if current_user %>
+      <%= link_to 'Create a recipe', new_recipe_path, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' %>
+    <% else %>
+      <%= link_to 'Login', new_user_session_path, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' %>
+    <% end %>
+  </div>
 <% else %>
   <h1 class="text-3xl font-bold mb-4 text-center mt-8 pb-2 border-b border-gray-300">Public Recipes</h1>
   <% @public_recipes.each do |recipe| %>
