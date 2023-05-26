@@ -33,10 +33,6 @@
       <%= form.label :public, "No", value: "false", class: "mr-2" %>
       <%= form.radio_button :public, false, class: "mr-2" %>
     </div>
-    <div class="mb-4">
-      <%= form.label :user_id, class: "text-gray-700" %>
-      <%= form.collection_select :user_id, User.all, :id, :name, { include_blank: true }, class: "border border-gray-300 rounded px-4 py-2 w-full" %>
-    </div>
     <div>
       <%= form.submit "Add recipe", class: "bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded" %>
     </div>

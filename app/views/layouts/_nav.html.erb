@@ -24,6 +24,7 @@
         </button>
       </div>
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+      <% if current_user %>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
@@ -46,6 +47,7 @@
             </button>
           </div>
         </div>
+      <% end %>
       </div>
     </div>
   </div>
