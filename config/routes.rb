@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root 'recipes#public'
   get '/public_recipes', to: 'recipes#public'
   resources :foods, only: [:index, :new, :create, :destroy]
-  resources :recipes, except: [:edit, :update] do
-    resources :recipe_foods, only: [:new, :create, :destroy]
+  resources :recipes, shallow: true, except: [:edit, :update] do
+    resources :ingredients, only: [:new, :create, :destroy, :edit, :update]
   end
   get '/general_shopping_list', to: 'shopping_list#index', as: 'general_shopping_list'
 end
