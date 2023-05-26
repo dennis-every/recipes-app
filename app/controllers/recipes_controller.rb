@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :public
+  skip_before_action :authenticate_user!, only: [:public, :show]
 
   def index
     @recipes = current_user.recipes
@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    authorize! :read, @recipe
   end
 
   def create
