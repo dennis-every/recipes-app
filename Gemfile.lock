@@ -103,6 +103,7 @@ GEM
     ffi (1.15.5)
     font-awesome-sass (6.4.0)
       sassc (~> 2.0)
+    ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.13.0)
@@ -226,6 +227,14 @@ GEM
     sassc (2.4.0)
       ffi (~> 1.9)
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (4.9.1)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -245,6 +254,7 @@ GEM
     tailwindcss-rails (2.0.29-x64-mingw-ucrt)
       railties (>= 6.0.0)
     thor (1.2.2)
+    tilt (2.1.0)
     timeout (0.3.2)
     turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
@@ -293,6 +303,7 @@ DEPENDENCIES
   rails (~> 7.0.4, >= 7.0.4.3)
   rspec-rails (~> 6.0, >= 6.0.2)
   rubocop (>= 1.0, < 2.0)
+  sassc-rails (~> 2.1, >= 2.1.2)
   spring
   sprockets-rails
   stimulus-rails

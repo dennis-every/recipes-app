@@ -14,7 +14,7 @@ RSpec.describe Recipe, type: :model do
 
   context 'Testing Associations' do
     it 'has_many recipes' do
-      assoc = Recipe.reflect_on_association(:recipe_foods)
+      assoc = Recipe.reflect_on_association(:ingredients)
       expect(assoc.macro).to eq :has_many
     end
     it 'belongs_to user' do
