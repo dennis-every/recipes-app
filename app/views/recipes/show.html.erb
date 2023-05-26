@@ -1,6 +1,6 @@
 <section id='recipe' class="container mx-auto px-4">
   <header class='text-center'>
-    <h1 class="text-3xl font-bold my-8">Recipe <%= @recipe.id %></h1>
+    <h1 class="text-3xl font-bold my-8">Recipe <%= @recipe.name %></h1>
   </header>
   <main class='recipe'>
     <div>
@@ -16,7 +16,7 @@
     </div>
   </main>
   <div class='recipe__btn-wrap'>
-    <%= link_to 'Generate shopping list', root_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+    <%= link_to 'Generate shopping list', general_shopping_list_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
     <%= link_to 'Add ingredient', new_recipe_ingredient_path(@recipe), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
   </div>
   <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
