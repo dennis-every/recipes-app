@@ -44,8 +44,9 @@ class RecipesController < ApplicationController
 
   def publish
     @recipe = Recipe.find(params[:id])
-    @recipe.update(public: false)
-    head :no_content
+    @recipe.public = !@recipe.public
+
+    redirect_to @recipe if @recipe.save
   end
 
   private
