@@ -1,6 +1,13 @@
 class RecipesController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[public show]
+
   def index
     @recipes = current_user.recipes
+  end
+
+  def show
+    @recipe = Recipe.find(params[:id])
+    authorize! :read, @recipe
   end
 
   def create
@@ -34,6 +41,13 @@ class RecipesController < ApplicationController
       end
       @totals[pub.id] = total
     end
+  end
+
+  def publish
+    @recipe = Recipe.find(params[:id])
+    @recipe.public = !@recipe.public
+
+    redirect_to @recipe if @recipe.save
   end
 
   private

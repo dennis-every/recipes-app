@@ -20,4 +20,6 @@
 
   Recipe.create!(name: dish_name, description: dish_description)
 end
+
+User.create!(name: 'John Doe', email: 'test@test.com', password: 'password')
   
