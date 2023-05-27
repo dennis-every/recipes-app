@@ -1,0 +1,35 @@
+<section id='foods' class="container mx-auto px-4">
+  <div class='mt-5 mb-5 text-end'>
+    <%= link_to 'Add Food', new_food_path, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' %>
+  </div>
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left bg-white border border-gray-200 rounded-md">
+      <thead class="text-xs bg-gray-200 text-gray-700">
+        <tr>
+          <th scope="col" class="px-6 py-3 border-b">Food</th>
+          <th scope="col" class="px-6 py-3 border-b">Measurement unit</th>
+          <th scope="col" class="px-6 py-3 border-b">Quantity</th>
+          <th scope="col" class="px-6 py-3 border-b">Unit price</th>
+          <th scope="col" class="px-6 py-3 border-b">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @foods.each_with_index do |food, index| %>
+          <tr class="<%= index.even? ? 'bg-gray-100' : 'bg-gray-50' %> border-b">
+            <td class="px-6 py-4 whitespace-nowrap"><%= food.name %></td>
+            <td class="px-6 py-4"><%= food.measurement_unit %></td>
+            <td class="px-6 py-4"><%= food.quantity %></td>
+            <td class="px-6 py-4"><%= number_to_currency(food.price) %></td>
+            <td class="px-6 py-4">
+              <% if can? :destroy, food %>
+                <%= button_to 'Delete', food_path(food), method: :delete, class: "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" %>
+              <% else %>
+                n/a
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>

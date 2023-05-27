@@ -1,0 +1,33 @@
+<section id='new-food' class="flex items-center justify-center h-screen">
+<%= form_with model: food, class: "max-w-3xl w-3/4 p-6 bg-white rounded shadow" do |form| %>
+  <% if food.errors.any? %>
+    <div>
+      <h4 class="text-red-600"><%= pluralize(food.errors.count, 'error') %> prohibited this object from being saved:</h4>
+      <ul>
+        <% food.errors.full_messages.each do |message| %>
+          <li class="text-red-600"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="mb-4">
+    <%= form.label :name, class: "text-gray-700"  %> <br>
+    <%= form.text_field :name, class: "border border-gray-300 rounded px-4 py-2 w-full" %>
+  </div>
+  <div class="mb-4">
+    <%= form.label :measurement_unit, class: "text-gray-700"  %> <br>
+    <%= form.text_field :measurement_unit, class: "border border-gray-300 rounded px-4 py-2 w-full" %>
+  </div>
+  <div class="mb-4">
+    <%= form.label :price, class: "text-gray-700"  %> <br>
+    <%= form.text_field :price, class: "border border-gray-300 rounded px-4 py-2 w-full" %>
+  </div>
+  <div class="mb-4">
+    <%= form.label :quantity, class: "text-gray-700"  %> <br>
+    <%= form.number_field :quantity, class: "border border-gray-300 rounded px-4 py-2 w-full" %>
+  </div>
+  <div>
+    <%= form.submit "Add Food", class: "bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded" %>
+  </div>
+<% end %>
+</section>
