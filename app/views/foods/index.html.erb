@@ -19,7 +19,7 @@
             <td class="px-6 py-4 whitespace-nowrap"><%= food.name %></td>
             <td class="px-6 py-4"><%= food.measurement_unit %></td>
             <td class="px-6 py-4"><%= food.quantity %></td>
-            <td class="px-6 py-4"><%= food.price %></td>
+            <td class="px-6 py-4"><%= number_to_currency(food.price) %></td>
             <td class="px-6 py-4">
               <% if can? :destroy, food %>
                 <%= button_to 'Delete', food_path(food), method: :delete, class: "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" %>

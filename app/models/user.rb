@@ -8,16 +8,4 @@ class User < ApplicationRecord
   has_many :recipes, dependent: :destroy
 
   validates :name, presence: true
-
-  def shopping_list
-    foods = []
-    recipes.each do |recipe|
-      foods << recipe.foods
-    end
-    foods.flatten
-  end
-
-  def shopping_list_value
-    shopping_list.sum { |food| food[:price] * food[:quantity] }
-  end
 end
