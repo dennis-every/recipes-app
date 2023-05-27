@@ -103,7 +103,6 @@ GEM
     ffi (1.15.5)
     font-awesome-sass (6.4.0)
       sassc (~> 2.0)
-    ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.13.0)
@@ -145,6 +144,8 @@ GEM
     nokogiri (1.15.2-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.15.2-x64-mingw-ucrt)
+      racc (~> 1.4)
+    nokogiri (1.15.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.23.0)
@@ -224,8 +225,6 @@ GEM
     rubocop-ast (1.28.1)
       parser (>= 3.2.1.0)
     ruby-progressbar (1.13.0)
-    sassc (2.4.0)
-      ffi (~> 1.9)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -252,6 +251,8 @@ GEM
     tailwindcss-rails (2.0.29-arm64-darwin)
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.29-x64-mingw-ucrt)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.0.29-x86_64-linux)
       railties (>= 6.0.0)
     thor (1.2.2)
     tilt (2.1.0)
@@ -287,6 +288,7 @@ GEM
 PLATFORMS
   arm64-darwin-22
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
