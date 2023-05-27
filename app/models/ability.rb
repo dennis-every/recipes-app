@@ -20,5 +20,7 @@ class Ability
     end
 
     can :create, Food
+    can :create, Recipe
+    can :manage, Ingredient
   end
 end
