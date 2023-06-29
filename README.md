@@ -149,6 +149,12 @@ rspec
 - Twitter: [@AshmalZahraa](https://twitter.com/AshmalZahraa)
 - LinkedIn: [ashmal-zahra](https://www.linkedin.com/in/ashmal-zahra)
 
+👤 **Dennis Every**
+
+- GitHub: [@dennis-every](https://github.com/dennis-every)
+- Twitter: [@dennis_every](https://twitter.com/dennis_every)
+- LinkedIn: [dennis-every](https://www.linkedin.com/in/dennis-every/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
